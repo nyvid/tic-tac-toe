@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-indigo-50;
+  }
+
+  button {
+    @apply bg-indigo-800 text-white py-2 px-4 rounded-lg hover:bg-indigo-400 transition-colors active:bg-indigo-600 font-bold;
+  }
+
+  p {
+    @apply font-bold;
+  }
+}
