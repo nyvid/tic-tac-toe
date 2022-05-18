@@ -1,0 +1,34 @@
+{
+  "name": "turborepo-basic-shared",
+  "version": "0.0.0",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev --parallel",
+    "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,css}\"",
+    "lint": "turbo run lint"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "yarn exec lint-staged"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,json,css}": [
+      "prettier --write"
+    ]
+  },
+  "devDependencies": {
+    "lint-staged": "^12.4.1",
+    "prettier": "^2.6.2",
+    "simple-git-hooks": "^2.7.0",
+    "turbo": "^1.2.9"
+  },
+  "packageManager": "yarn@1.22.18",
+  "engines": {
+    "node": ">=14.0.0",
+    "npm": ">=7.0.0"
+  }
+}
